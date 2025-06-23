@@ -17,6 +17,7 @@ composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-
 composer config --no-plugins allow-plugins.phpstan/extension-installer true
 composer config --no-plugins allow-plugins.php-http/discovery true
 composer config --no-plugins allow-plugins.tbachert/spi false
+composer config --no-plugins allow-plugins.drupal/core-recipe-unpack true
 
 # Add repositories for Webform libraries.
 composer config repositories.tippyjs '{
@@ -212,6 +213,7 @@ composer config repositories.codemirror '{
     }
 }'
 composer require -n --no-plugins --no-update \
+    drupal/core-recipe-unpack \
     codemirror/codemirror \
     cweagans/composer-patches:^2@beta \
     drupal/ai_provider_litellm:@beta \
