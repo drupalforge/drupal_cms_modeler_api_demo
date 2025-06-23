@@ -38,8 +38,10 @@ fi
 echo
 time composer -n update --no-dev --no-progress
 
+#== Unpack recipes
+composer drupal:recipe-unpack -n --no-progress
 #== Add modeler API and latest owner and modeler releases
-composer require -n  --no-dev --no-progress \
+composer require -n --no-progress \
     drupal/modeler_api:1.0.x-dev \
     drupal/eca:3.0.x-dev \
     drupal/bpmn_io:3.0.x-dev
