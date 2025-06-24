@@ -15,12 +15,12 @@ export COMPOSER_NO_AUDIT=1
 export COMPOSER_NO_DEV=1
 
 # Install VSCode Extensions
-if [[ -n "${DP_VSCODE_EXTENSIONS:-}" ]]; then
-  IFS=','
-  for value in $DP_VSCODE_EXTENSIONS; do
-    time code-server --install-extension $value
-  done
-fi
+#if [[ -n "${DP_VSCODE_EXTENSIONS:-}" ]]; then
+#  IFS=','
+#  for value in $DP_VSCODE_EXTENSIONS; do
+#    time code-server --install-extension $value
+#  done
+#fi
 
 #== Remove root-owned files.
 echo
@@ -41,7 +41,7 @@ time composer -n update --no-dev --no-progress
 #== Unpack recipes
 composer drupal:recipe-unpack -n
 #== Remove package that still requires a recipe
-composer remove drupal/drupal_cms_analytics  -n --no-progress
+composer remove drupal/drupal_cms_analytics -n --no-progress
 #== Add modeler API and latest owner and modeler releases
 composer require -n --no-progress \
     drupal/modeler_api:1.0.x-dev \
