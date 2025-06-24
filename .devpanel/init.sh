@@ -74,6 +74,10 @@ echo
 if [ -z "$(mysql -h $DB_HOST -P $DB_PORT -u $DB_USER -p$DB_PASSWORD $DB_NAME -e 'show tables')" ]; then
   time drush -n si
 
+  #== Enable ECA UI and run updates - @todo Disable when new recipes are available
+  drush en eca_ui
+  time drush -n updb
+
   #== Apply the AI recipe.
   if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
     echo
